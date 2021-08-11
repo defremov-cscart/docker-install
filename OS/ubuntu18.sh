@@ -26,16 +26,6 @@ printf '\nTuning GRUB config...\n\n'
 sed -i 's/GRUB_CMDLINE_LINUX\s*=.*/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"/g' /etc/default/grub
 update-grub
 
-### Installing packages
-printf '\nInstalling packages...\n\n'
-apt-get update -y
-apt install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common
-
 ### Docker install
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
