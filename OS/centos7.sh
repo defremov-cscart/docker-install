@@ -10,10 +10,7 @@ touch /etc/docker/daemon.json
 
 echo '{
     "dns": ["1.1.1.1"],
-    "default-address-pools": [{
-		  "base": "172.100.0.0/8",
-		  "size": 16
-	  }],
+    "bip": "172.26.0.1/16",
     "live-restore": true,
 	  "storage-driver": "overlay2",
 	  "storage-opts": [
