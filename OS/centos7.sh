@@ -18,6 +18,18 @@ echo '{
 	    ]
 	  }' > /etc/docker/daemon.json
 
+touch /etc/sysctl.d/docker.conf
+echo 'net.ipv6.conf.default.accept_ra_rtr_pref = 0
+	net.ipv6.conf.default.accept_ra_pinfo = 0
+	net.ipv6.conf.default.accept_ra_defrtr = 0
+	net.ipv6.conf.default.autoconf = 0
+	net.ipv6.conf.default.dad_transmits = 0
+	net.ipv6.conf.default.max_addresses = 1
+	net.bridge.bridge-nf-call-ip6tables = 1
+	net.bridge.bridge-nf-call-iptables = 1
+' > /etc/sysctl.d/docker.conf
+sysctl -p
+
 ### Docker install
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
