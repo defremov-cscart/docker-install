@@ -20,12 +20,6 @@ echo '{
  	   "overlay2.override_kernel_check=true"
 	    ]
 	  }' > /etc/docker/daemon.json
-    
-### Installing packages
-printf '\nInstalling packages...\n\n'
-yum install -q -y yum-utils \
-    device-mapper-persistent-data \
-    lvm2
 
 ### Docker install
 curl -fsSL https://get.docker.com -o get-docker.sh
