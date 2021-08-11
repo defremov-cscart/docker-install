@@ -56,6 +56,20 @@ yum install -q -y yum-utils \
 curl -fsSL "https://raw.githubusercontent.com/defremov-cscart/docker-install/main/OS/centos7.sh" -o centos7.sh
 sh centos7.sh
 
+elif cat /etc/*release | grep ^PRETTY_NAME | grep "Ubuntu 21.04"; then
+    printf '\nInstalling on Ubuntu 21.04\n\n'
+
+apt-get -qq update -y > /dev/null
+apt -qq install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common  > /dev/null
+
+curl -fsSL "https://raw.githubusercontent.com/defremov-cscart/docker-install/main/OS/ubuntu21.sh" -o ubuntu21.sh
+sh ubuntu21.sh
+
 elif cat /etc/*release | grep ^PRETTY_NAME | grep "CentOS Linux 8"; then
     printf '\nInstalling on CentOS Linux 8\n\n' 
 
