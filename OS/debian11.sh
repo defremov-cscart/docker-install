@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-printf '\nInstalling on Debian GNU/Linux 10\n\n'
+printf '\nInstalling on Debian GNU/Linux 11\n\n'
 
 ### Generate docker config
 printf '\nPrepare config for overlay2...\n\n'
