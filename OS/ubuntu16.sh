@@ -9,12 +9,17 @@ mkdir /etc/docker
 touch /etc/docker/daemon.json
 
 echo '{
+    "log-driver": "json-file",
+        "log-opts": {
+    "max-size": "10m",    
+    "max-file": "5"    
+    },
     "dns": ["1.1.1.1"],
     "bip": "172.26.0.1/16",
     "live-restore": true,
-	  "storage-driver": "overlay2",
-	  "storage-opts": [
- 	   "overlay2.override_kernel_check=true"
+        "storage-driver": "overlay2",
+	"storage-opts": [
+ 	"overlay2.override_kernel_check=true"
 	    ]
 	  }' > /etc/docker/daemon.json
 
