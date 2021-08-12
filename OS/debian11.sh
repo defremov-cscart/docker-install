@@ -5,8 +5,16 @@ printf '\nInstalling on Debian GNU/Linux 11\n\n'
 
 ### Generate docker config
 printf '\nPrepare config for overlay2...\n\n'
-mkdir /etc/docker
-touch /etc/docker/daemon.json
+
+if [ -e /etc/docker ]
+then printf '\nDocker directory already exist\n\n'
+else mkdir /etc/docker
+fi
+ 
+if [ -e /etc/docker/daemon.json ]
+then printf '\nDocker config already exist, renaming\n\n' && mv /etc/docker/daemon.json /etc/docker/daemon.json.OLD
+else touch /etc/docker/daemon.json
+fi
 
 echo '{
     "log-driver": "json-file",
