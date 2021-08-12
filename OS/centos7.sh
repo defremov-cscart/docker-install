@@ -55,7 +55,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 chmod +x /usr/local/bin/docker-compose
 
 if [ -e /usr/bin/docker-compose ]
-then printf '\nDocker-compose already exist, renaming\n\n' && rm -rf /usr/bin/docker-compose
+then printf '\nUpdating docker-compose\n\n' && rm -rf /usr/bin/docker-compose
 else ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 fi
 
