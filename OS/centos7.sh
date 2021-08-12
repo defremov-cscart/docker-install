@@ -53,7 +53,11 @@ usermod -aG docker $USER
 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
-ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+if [ -e /usr/bin/docker-compose ]
+then printf '\nDocker-compose already exist, renaming\n\n' && rm -rf /usr/bin/docker-compose
+else ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+fi
 
 printf '\n====YOU NEED TO REBOOT SERVER====\n\n'
 
