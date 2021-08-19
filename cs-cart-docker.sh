@@ -9,6 +9,7 @@ apt -qq install -y \
     apt-transport-https \
     ca-certificates \
     curl \
+    make \
     gnupg-agent \
     software-properties-common  > /dev/null
 
@@ -23,6 +24,7 @@ apt -qq install -y \
     apt-transport-https \
     ca-certificates \
     curl \
+    make \
     gnupg-agent \
     software-properties-common  > /dev/null
 
@@ -37,6 +39,7 @@ apt -qq install -y \
     apt-transport-https \
     ca-certificates \
     curl \
+    make \
     gnupg-agent \
     software-properties-common  > /dev/null
 
@@ -51,6 +54,7 @@ printf '\nInstalling packages...\n\n'
 yum install -q -y yum-utils \
     device-mapper-persistent-data \
     lvm2 \
+    make \
     deltarpm  > /dev/null
 
 curl -fsSL "https://raw.githubusercontent.com/defremov-cscart/docker-install/main/OS/centos7.sh" -o centos7.sh
@@ -64,6 +68,7 @@ apt -qq install -y \
     apt-transport-https \
     ca-certificates \
     curl \
+    make \
     gnupg-agent \
     software-properties-common  > /dev/null
 
@@ -77,6 +82,7 @@ elif cat /etc/*release | grep ^PRETTY_NAME | grep "CentOS Linux 8"; then
 printf '\nInstalling packages...\n\n'
 yum install -q -y yum-utils \
     device-mapper-persistent-data \
+    make \
     lvm2  > /dev/null
 
 curl -fsSL "https://raw.githubusercontent.com/defremov-cscart/docker-install/main/OS/centos8.sh" -o centos8.sh
@@ -90,6 +96,7 @@ apt -qq install -y \
     apt-transport-https \
     ca-certificates \
     curl \
+    make \
     gnupg-agent \
     software-properties-common  > /dev/null
 
@@ -104,6 +111,7 @@ apt -qq install -y \
     apt-transport-https \
     ca-certificates \
     curl \
+    make \
     gnupg-agent \
     software-properties-common  > /dev/null
 
